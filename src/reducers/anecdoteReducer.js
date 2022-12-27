@@ -23,6 +23,12 @@ const reducer = (state = initialState, action) => {
   console.log('state now: ', state)
   console.log('action', action)
 
+  if (action.type === "VOTE"){
+
+  }
+  else if (action.type === "ADD"){
+    
+  }
   return state
 }
 
