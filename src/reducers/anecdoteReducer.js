@@ -24,12 +24,25 @@ const reducer = (state = initialState, action) => {
   console.log('action', action)
 
   if (action.type === "VOTE"){
-
+    let anecdote = state.find(a => a.id === action.id)
+    anecdote.votes += 1
+    return state.map(a => a.id === action.id ? anecdote : a)
   }
   else if (action.type === "ADD"){
-    
+    return state.concat(action.anecdote)
   }
   return state
+}
+
+export const addVote = (id) => {
+  return({type: "VOTE", id: id})
+}
+
+export const createAnecdote = (content) => {
+  return({
+    type: "ADD",
+    anecdote: asObject(content)
+  })
 }
 
 export default reducer
