@@ -23,4 +23,7 @@ const addAnecdote = async (content) => {
     return response.data
 }
 
-export default { getAll, addAnecdote }
+export default {
+    getAll,
+    addAnecdote,
+}

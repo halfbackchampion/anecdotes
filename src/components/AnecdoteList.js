@@ -13,9 +13,7 @@ const AnecdoteList = () => {
     dispatch(addVote(id))
 
     const anecdote = anecdotes.find(a => a.id === id)
-    dispatch(setNotification(`you voted '${anecdote.content}'`))
-    // Remove the notification after 5 seconds
-    setTimeout(() => dispatch(setNotification("")), 5000)
+    dispatch(setNotification(`you voted '${anecdote.content}'`, 10))
   }
 
   const filteredAnecdotes = anecdotes.filter(a => a.content.includes(filter))
